@@ -1,12 +1,16 @@
 #include <QCoreApplication>
 
-#include <mytcpclient.h>
+#include <gtcpclient.h>
 
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
 
-    MyTcpClient client;
+    GTcpClient client;
+
+    client.performConnection();
+
+    client.writeSlot("Hi There!");
 
     return a.exec();
 }
